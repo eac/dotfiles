@@ -1,0 +1,30 @@
+[user]
+	name = git config --global user.name
+	email = git config --global user.email
+
+[github]
+  user = eac
+
+[alias]
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  pl = pull --rebase
+  st = status
+  ca = commit add
+  cm = commit -m
+  co = checkout
+  cp = cherry-pick
+  df = diff
+  gp = grep -n
+
+[color]
+  grep   = true
+  diff   = true
+  status = auto
+
+[push]
+  default = tracking
+
+[color "status"]
+  added     = yellow
+  changed   = green
+  untracked = cyan
