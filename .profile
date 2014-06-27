@@ -1,5 +1,7 @@
 export GREP_COLOR=auto
 
+export GREP_COLOR=auto
+alias vim="mvim -v"
 alias global-off='sudo mv /Applications/GlobalProtect{,OFF}.app && killall -9 GlobalProtect'
 alias global-on='sudo mv /Applications/GlobalProtect{OFF,}.app'
 
@@ -15,12 +17,7 @@ export PS1="\W \$(parse_git_branch)\$ "
 LS_COMMON="-hBGl"
 alias ls="command ls $LS_COMMON"
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-
-
-export EDITOR=mvim
+export EDITOR=vim
 function gsub() {
   find $1 -type f | xargs perl -pi -e "s/$2/$3/g"
 }

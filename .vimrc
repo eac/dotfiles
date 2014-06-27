@@ -31,3 +31,9 @@ autocmd BufWritePre *.rb,*.js,*.erb,*.scss :%s/\t/  /e
 
 " Highlight trailing whitespace
 set list listchars=tab:»·,trail:·"
+
+" via go vim readme
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
