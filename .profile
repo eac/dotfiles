@@ -1,6 +1,12 @@
 export GREP_COLOR=auto
+export GOPATH=$HOME/projects/eac/go
+export GOROOT=`go env GOROOT`
+export CDPATH=".:~/projects/eac:$GOPATH"
 
-export GREP_COLOR=auto
+# brew install bash-completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 alias vim="mvim -v"
 alias global-off='sudo mv /Applications/GlobalProtect{,OFF}.app && killall -9 GlobalProtect'
 alias global-on='sudo mv /Applications/GlobalProtect{OFF,}.app'
@@ -26,6 +32,8 @@ function gsub() {
 PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}\007"'
 
 function gtc() { git co `git branch | grep "$@"`; }
+
+
 
 alias ss='script/server -p 3001 --debugger'
 alias sc='script/console --debugger'
